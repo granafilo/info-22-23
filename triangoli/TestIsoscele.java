@@ -7,16 +7,25 @@ class TestIsoscele{
         Isoscele t1 = null;
         boolean corr = true, pieno = false, baseCheck = false, pCheck = false, areaCheck = false, lCheck = true;
         do{
-            System.out.println("\n0. esci");
-            System.out.println("1. crea triangolo");
-            System.out.println("2. per visualizzare il triangolo");
-            System.out.println("3. per verificare se è un triangolo");
-            System.out.println("4. per verificare che il triangolo sia isoscele");
-            System.out.println("5. per individuare la base e il lato obliquo");
-            System.out.println("6. per calcolare il perimetro del triangolo");
-            System.out.println("7. per calcolare l'area del triangolo\n");
-            scelta = input.nextInt();
-            input.nextLine();
+            do{
+                lCheck = true;
+                System.out.println("\n0. esci");
+                System.out.println("1. crea triangolo");
+                System.out.println("2. per visualizzare il triangolo");
+                System.out.println("3. per verificare se è un triangolo");
+                System.out.println("4. per verificare che il triangolo sia isoscele");
+                System.out.println("5. per individuare la base e il lato obliquo");
+                System.out.println("6. per calcolare il perimetro del triangolo");
+                System.out.println("7. per calcolare l'area del triangolo\n");
+                try{
+                    scelta = input.nextInt();
+                }catch(InputMismatchException e){
+                    System.out.println("devi inserire un numero");
+                    lCheck = false;
+                }
+                    input.nextLine();
+            }while(!lCheck);
+            
             switch(scelta){
 
                 case 0:
