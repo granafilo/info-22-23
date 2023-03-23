@@ -1,6 +1,7 @@
 class Equilatero extends Triangolo{
 	double altezza;
 
+	
 	public Equilatero(int lato){
 		super(lato,lato,lato);
 	}
