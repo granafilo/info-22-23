@@ -1,6 +1,20 @@
 import java.util.*;
 
 class TestIsoscele{
+    public static int Scanneri(Scanner scanner){
+        int i = 0;
+        int a = 0;
+        do{
+            a = 0;
+            try {
+                i = scanner.nextInt();
+            } catch (InputMismatchException e) {
+                System.out.println("dato non valido, inserire un numero");
+                a = 1;
+            }
+        }while(a==1);
+        return i;
+    }
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         int lato1=0, lato2=0, lato3=0, altezza=0, scelta = 0;
@@ -17,13 +31,8 @@ class TestIsoscele{
                 System.out.println("5. per individuare la base e il lato obliquo");
                 System.out.println("6. per calcolare il perimetro del triangolo");
                 System.out.println("7. per calcolare l'area del triangolo\n");
-                try{
-                    scelta = input.nextInt();
-                }catch(InputMismatchException e){
-                    System.out.println("devi inserire un numero");
-                    lCheck = false;
-                }
-                    input.nextLine();
+                scelta = Scanneri(input); 
+                input.nextLine();
             }while(!lCheck);
             
             switch(scelta){
