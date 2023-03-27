@@ -1,18 +1,18 @@
 import java.util.*;
 
 class TestIsoscele{
+
     public static int Scanneri(Scanner scanner){
         int i = 0;
-        int a = 0;
         do{
-            a = 0;
             try {
                 i = scanner.nextInt();
             } catch (InputMismatchException e) {
+                scanner.nextLine();
                 System.out.println("dato non valido, inserire un numero");
-                a = 1;
+                i = -1;
             }
-        }while(a==1);
+        }while(i == -1);
         return i;
     }
     public static void main(String[] args) {
@@ -44,41 +44,14 @@ class TestIsoscele{
                     pieno = false;
                     do{
                         corr = true;
-                        do{
-                            lCheck = true;
-                            System.out.println("Inserisci il primo lato");
-                            try{
-                               lato1 = input.nextInt();
-                            }
-                            catch(InputMismatchException e){
-                               System.out.println("devi inserire un numero");
-                               lCheck = false;
-                            }
-                            input.nextLine();
-                        }while(!lCheck);
+                        System.out.println("Inserisci il primo lato");
+                        lato1 = Scanneri(input);
                         System.out.println("Inserisci il secondo lato");
-                        try{
-                            lato2 = input.nextInt();
-                         }
-                         catch(InputMismatchException e){
-                            System.out.println("devi inserire un numero");
-                        }
-                        input.nextLine();
+                        lato2 = Scanneri(input);
                         System.out.println("Inserisci il terzo lato");
-                        try{
-                            lato3 = input.nextInt();
-                         }
-                         catch(InputMismatchException e){
-                            System.out.println("devi inserire un numero");
-                         }
-                        input.nextLine();
+                        lato3 = Scanneri(input);
                         System.out.println("Inserisci l'altezza");
-                        try{
-                            altezza = input.nextInt();
-                        }
-                        catch(InputMismatchException e){
-                        System.out.println("devi inserire un numero");
-                        }
+                        altezza = Scanneri(input);
                         input.nextLine();
                         if(lato1 <1 || lato2 <1 || lato3<1 || altezza<1){
                            corr = false;
