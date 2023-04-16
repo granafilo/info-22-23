@@ -31,8 +31,8 @@ public class TestRubrica{
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Vector<Rubrica> contatto = new Vector<Rubrica>(1,1);
-        String cognome, nome, indirizzo_email, c ,n;
-        int num, scelta = 0, i=0, cont = 0;
+        String cognome, nome, indirizzo_email, c ,n, num;
+        int scelta = 0, i=0, cont = 0, s1 = 0;
         boolean a = false;
         Rubrica r = null;
 
@@ -54,7 +54,7 @@ public class TestRubrica{
                     System.out.println("Dammi l'inidirizzo email");
                     indirizzo_email = Scanners(input);
                     System.out.println("Dammi il numero di telefono");
-                    num = Scanneri(input);
+                    num = Scanners(input);
                     r = new Rubrica(cognome, nome, indirizzo_email, num);
                     contatto.add(r);
                     break;
@@ -82,7 +82,46 @@ public class TestRubrica{
 
                     break;
                 case 4:
-                    //modificare contatto con sottomenu a partire da nome e cognome
+
+                    System.out.println("Dammi il cognome del contatto da eliminare");
+                    c = Scanners(input);
+                    System.out.println("Dammi il nome del contatto da eliminare");
+                    n = Scanners(input);
+                    for(cont = 0; cont<i; cont++){
+                        if(contatto.get(cont).cognome.equals(c) && contatto.get(cont).nome.equals(n)){
+                            do{
+                                a = true;
+                                System.out.println("Premi 0 per ...");
+                                s1 = Scanneri(input);
+                                switch(s1){
+                                    case 0:
+                                    break;
+                                    case 1:
+                                        System.out.println("Inserisci il nuovo cognome");
+                                        contatto.get(cont).cognome = Scanners(input);
+                                        break;
+                                    case 2:
+                                        System.out.println("Inserisci il nuovo nome");
+                                        contatto.get(cont).nome = Scanners(input);
+                                        break;
+                                    case 3:
+                                        System.out.println("Inserisci il nuovo indirizzo mail");
+                                        contatto.get(cont).indirizzo_email = Scanners(input);
+                                        break;
+                                    case 4:
+                                        System.out.println("Inserisci il nuovo cognome");
+                                        contatto.get(cont).num = Scanners(input);
+                                        break;
+                                    default:
+                                        System.out.println("Scelta non prevista");
+                                        break;
+                                }
+                            }while(s1!=0);
+                        }
+                    }
+                    if(!a){
+                        System.out.println("contatto non trovato");
+                    }
                     break;
                 
                 default:

@@ -1,9 +1,9 @@
 class Rubrica{
 
     String cognome, nome, indirizzo_email;
-    int num;
+    String num;
     
-    public Rubrica(String cognome, String nome, String indirizzo_email,int num){
+    public Rubrica(String cognome, String nome, String indirizzo_email,String num){
         this.cognome = cognome;
         this.nome = nome;
         this.indirizzo_email = indirizzo_email;
