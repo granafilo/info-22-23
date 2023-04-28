@@ -39,7 +39,7 @@ class Orario {
             }else{
                 ore -= 1;
             }
-            solare = false;
+            solare = true;
         }else{
             System.out.println("L'ora è già solare");
         }
