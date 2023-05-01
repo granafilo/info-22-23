@@ -28,6 +28,7 @@ public class TestRubrica{
 
         return i;
     }
+
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         Vector<Rubrica> contatto = new Vector<Rubrica>(1,1);
