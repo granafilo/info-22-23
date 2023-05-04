@@ -1,0 +1,35 @@
+import java.util.*;
+
+class TestProva{
+    public static void main(String arg[]){
+        Scanner input = new Scanner(System.in);
+        Prova a = null;
+        Vector<Prova> lista = new Vector<Prova>(1,1);
+        int scelta = 0,cont = 0;
+        String nome;
+        boolean ver = true;
+        double altezza;
+
+        do{
+            ver = true;
+            do{
+               sysout("Premi 0 per...");
+                try{
+                    scelta = input.nextInt();
+                    input.nextLine();
+                }catch(InputMismatchException e){
+                    ver = false
+                } 
+            }while(!ver);
+            
+            case 0:
+                break;
+            case 1:
+                break;
+            
+            default:
+                sysout("Scelta non prevista");
+                break
+        }while(scelta != 0);
+    }
+}
