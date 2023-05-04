@@ -20,7 +20,7 @@ public class TestRubrica{
             try{
                 i = scanner.nextInt();
                 scanner.nextLine();
-            }catch(InputMismatchException e){
+            }catch(Exception e){
                 System.out.println("Inserire un numero");
                 i = -1;
             }
